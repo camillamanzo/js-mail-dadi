@@ -4,10 +4,11 @@
 * e stampa un messaggio appropriato sull’esito del controllo.
 */
 
-let mailIscritti = ["pincopallo@ciao.com", "pincopallino@ciao.com", "pincapalla@ciao.com", "pincapallina@ciao.com", "pincopalluccio@ciao.com"]
+let mailIscritti = ["pincopallo@ciao.com", "pincopallino@ciao.com", "pincapalla@ciao.com", "pincapallina@ciao.com", "pincopalluccio@ciao.com"];
+let mailUtente = prompt("Inserisca la sua mail");
+let trovataMail = false;
 
-let mailUtente = prompt("Inserisca la sua mail")
-document.getElementById("mail-utente").innerHTML = (mailUtente)
+document.getElementById("mail-utente").innerHTML = (mailUtente);
 
 for (var i = 0; i<mailIscritti.length; i++){
     console.log(i)
@@ -15,14 +16,19 @@ for (var i = 0; i<mailIscritti.length; i++){
 
     if (mailUtente == mailIscritti[i]){
         console.log("sei iscritto.")
-        document.getElementById("iscrizione").innerHTML = ("Sei iscritto!")
+        trovataMail = true;
         
     }else if (mailUtente != mailIscritti[i]){
         console.log("Non sei iscritto.")
-        document.getElementById("iscrizione").innerHTML = ("Non sei iscritto...")
     }
 }
 
+console.log (trovataMail)
+if(trovataMail == true){
+    document.getElementById("iscrizione").innerHTML = ("Sei iscritto!")
+} else {
+    document.getElementById("iscrizione").innerHTML = ("Non sei iscritto..")
+}
 
 
 
